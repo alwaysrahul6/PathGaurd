@@ -1,0 +1,30 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log
+dist/
+build/
+
+# VS Code settings
+.vscode/
+
+# Env files (API keys, DB passwords, etc.)
+.env
+.env.local
+
+# Database files
+*.db
+gps_data.db
+
+# Arduino build / object files
+*.elf
+*.hex
+*.bin
+build/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log

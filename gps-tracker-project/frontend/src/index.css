@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the Leaflet map is visible even without Tailwind */
+#map {
+  height: 100%;
+  width: 100%;
+}

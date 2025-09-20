@@ -1,0 +1,231 @@
+/* Performance optimizations for CyberWall Dashboard */
+
+/* Reduce paint complexity */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(34, 197, 94, 0.3) transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(34, 197, 94, 0.3);
+  border-radius: 3px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 197, 94, 0.5);
+}
+
+/* Optimize animations for better performance */
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-ping {
+  animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+/* Use transform instead of changing layout properties */
+.transform-gpu {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Optimize hover effects */
+.hover\:scale-\[1\.02\]:hover {
+  transform: scale(1.02) translateZ(0);
+}
+
+/* Reduce repaints on scroll */
+.overflow-y-auto {
+  contain: layout style paint;
+}
+
+/* Optimize background gradients */
+.bg-gradient-to-br {
+  background-attachment: fixed;
+}
+
+/* Reduce animation complexity for better performance */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+/* Optimize text rendering */
+.font-mono {
+  font-feature-settings: "liga" 0;
+  text-rendering: optimizeSpeed;
+}
+
+/* Reduce layout thrashing */
+.absolute {
+  contain: layout;
+}
+
+/* Optimize shadow rendering */
+.shadow-2xl {
+  filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
+}
+
+/* Performance-focused animations */
+.animate-matrix-rain {
+  animation: matrix-rain 3s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-matrix-rotate {
+  animation: matrix-rotate 10s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-matrix-float {
+  animation: matrix-float 8s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-matrix-glow {
+  animation: matrix-glow 4s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-matrix-flicker {
+  animation: matrix-flicker 2s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-matrix-pulse {
+  animation: matrix-pulse 6s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-data-stream {
+  animation: data-stream 2s linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-network-glow {
+  animation: network-glow 5s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-globe-pulse {
+  animation: globe-pulse 4s ease-in-out infinite;
+}
+
+.animate-globe-rotate {
+  animation: globe-rotate 20s linear infinite;
+}
+
+.animate-cyber-flicker {
+  animation: cyber-flicker 3s ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+.animate-cyber-glow {
+  animation: cyber-glow 2s ease-in-out infinite;
+}
+
+/* Keyframes for performance-optimized animations */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100vh); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+@keyframes matrix-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes matrix-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(180deg); }
+}
+
+@keyframes matrix-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes matrix-flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+@keyframes matrix-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+@keyframes data-stream {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes network-glow {
+  0%, 100% { opacity: 0.3; box-shadow: 0 0 5px rgba(34, 197, 94, 0.3); }
+  50% { opacity: 0.8; box-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+}
+
+@keyframes globe-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.2; }
+  50% { transform: scale(1.05); opacity: 0.3; }
+}
+
+@keyframes globe-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes cyber-flicker {
+  0%, 100% { opacity: 0.05; }
+  50% { opacity: 0.1; }
+}
+
+@keyframes cyber-glow {
+  0%, 100% { text-shadow: 0 0 5px rgba(34, 197, 94, 0.3); }
+  50% { text-shadow: 0 0 20px rgba(34, 197, 94, 0.6); }
+}
+
+/* Animation delay utilities */
+.animation-delay-1000 { --delay: 1s; }
+.animation-delay-2000 { --delay: 2s; }
+.animation-delay-3000 { --delay: 3s; }
+.animation-delay-4000 { --delay: 4s; }
