@@ -2,11 +2,10 @@
 
 **PathGuard** is an **IoT + Web + Security Monitoring** project that combines **GPS tracking, real-time map visualization, intrusion detection, and Arduino-based hardware integration** into one platform.  
 
-This project leverages multiple technologies:
-- **Node.js & Express** → Backend APIs and GPS tracker
-- **React (Vite)** → Frontend dashboard for live maps, alerts, and logs
-- **Arduino (ESP32, LoRa, GPS)** → Hardware-level sensing and communication
-- **CyberWall module** → Attack detection & log analysis system
+PathGuard is an innovative GPS-based tracking system designed for defense and military operations.
+The primary goal of this project is to track the real-time location of soldiers on the battlefield, ensuring better coordination, safety, and rapid response in critical missions.
+
+This system bridges the gap between field soldiers and command centers by providing accurate, real-time location data that can save lives during high-risk operations.
 
 ---
 
@@ -64,3 +63,7 @@ Collect logs and network traffic data
 Detect anomalies or attack patterns
 Provide alerts on the dashboard
 Initial testing can be done using dummy traffic generators and manual JSON log submissions (via Postman).
+
+A Project Dedicated to Soldiers
+
+“Not all heroes wear capes, some wear uniforms. PathGuard ensures they return home safe.”
